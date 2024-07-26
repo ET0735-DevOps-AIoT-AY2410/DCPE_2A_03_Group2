@@ -16,15 +16,10 @@ def key_reader():
     keypad_thread = Thread.Thread(target = keypad.get_key)
     keypad_thread.start()
 
+
 def ret_key():
     keyvalue = shared_keypad_queue.get()
     return keyvalue
-
-
-
-
-
-
 
 
 def clear_queue():

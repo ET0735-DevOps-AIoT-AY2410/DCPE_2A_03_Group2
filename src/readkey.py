@@ -24,7 +24,7 @@ def ret_key(): #returns value
 def ATMPIN(card_no): #to allow key input for card payment
     PIN = []
     while (len(PIN)< len(int(i) for i in str(card_no))):
-        key = shared_keypad_queue.get()
+        key = shared_keypad_queue.get() 
         PIN.append(key)
 
     if (len(PIN) == len(int(i) for i in str(card_no))):
@@ -34,6 +34,11 @@ def ATMPIN(card_no): #to allow key input for card payment
             return False
         else:
             return True
+
+if __name__ == "__main__":
+    keypad.init(key_pressed)
+    keypad_thread = Thread.Thread( target=keypad.get_key )
+    keypad_thread.start()
 
 
 

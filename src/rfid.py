@@ -25,7 +25,7 @@ def read_rfid(reader):
         card_info = [float(item) for item in split_var2[:-1]]
     pin = split_var2[-1]
 
-    return [uid]
+    return uid
 
 if __name__ == "__main__":
     reader = rfid_reader.init()

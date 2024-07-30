@@ -6,6 +6,7 @@
     <title>SIGMA ONLINE STORE</title>
     <link rel="stylesheet" href="shoppinglist.css">
 </head>
+
 <body>
     <header>
         <h1>Welcome to Our Store</h1>
@@ -13,65 +14,81 @@
         <a href="checkout.html" class="nav-link">Checkout</a>
     </header>
     <main>
-                <div class="product" id="carrot">
+        <table>
+        <tr>
+            <td>   <div class="product" id="carrot">
                     <h2>Carrot</h2>
                     <img src="fruitpic/carrot-icon.png" alt="Carrot" class="product-image">
-                    <p>Price: $2.40</p>
+                    <p>Price: $1</p>
                     <input type="number" id="quantity-carrot" value="1" min="1">
                     <button onclick="addToCart('Carrot', 1.00, 'quantity-carrot')">Add to Cart</button>
                     
                 </div>
+            </td>
+            <td>
                 <div class="product" id="tomato">
                     <h2>Tomato</h2>
                     <img src="fruitpic/tomato-icon.png" alt="Tomato" class="product-image">
-                    <p>Price: $1.00</p>
+                    <p>Price: $1</p>
                     <input type="number" id="quantity-tomato" value="1" min="1">
                     <button onclick="addToCart('Tomato', 0.50, 'quantity-tomato')">Add to Cart</button>
                 
                 </div>
+            </td>
+            <td>
                 <div class="product" id="pumpkin">
                     <h2>Pumpkin</h2>
                     <img src="fruitpic/pumpkin-icon.png" alt="Pumpkin" class="product-image">
-                    <p>Price: $3.00</p>
+                    <p>Price: $3</p>
                     <input type="number" id="quantity-pumpkin" value="1" min="1">
                     <button onclick="addToCart('Pumpkin', 3.00, 'quantity-pumpkin')">Add to Cart</button>
                     
                 </div>           
-        
+            </td>
+            <td>
                 <div class="product" id="eggplant">
                     <h2>Eggplant</h2>
                     <img src="fruitpic/eggplant-icon.png" alt="eggplant" class="product-image">
-                    <p>Price: $2.00</p>
+                    <p>Price: $2</p>
                     <input type="number" id="quantity-eggplant" value="1" min="1">
                     <button onclick="addToCart('Eggplant', 3.00, 'quantity-eggplant')">Add to Cart</button>
                     
                 </div>
-        
+            
+            </td>
+        </tr>
+        <tr>
+            <td>
                 <div class="product" id="Fresh Apple">
                     <h2>Fresh Apple</h2>
                     <img src="fruitpic/fresh-apple-icon.png" alt="fresh-apple" class="product-image">
-                    <p>Price: $0.50</p>
+                    <p>Price: $1</p>
                     <input type="number" id="quantity-fresh-apple" value="1" min="1">
                     <button onclick="addToCart('Fresh-Apple', 3.00, 'quantity-fresh-apple')">Add to Cart</button>
                     
                 </div>
-        
+            </td>
+            <td>
                 <div class="product" id="orange">
                     <h2>Orange</h2>
                     <img src="fruitpic/orange-icon.png" alt="orange" class="product-image">
-                    <p>Price: $0.75</p>
+                    <p>Price: $1</p>
                     <input type="number" id="quantity-orange" value="1" min="1">
                     <button onclick="addToCart('Orange', 3.00, 'quantity-orange')">Add to Cart</button>
                 </div>
-
+            </td>
+            <td>
                 <div class="product" id="banana">
                     <h2>Banana</h2>
                     <img src="fruitpic/bananas-icon.png" alt="orange" class="product-image">
-                    <p>Price: $2.50</p>
+                    <p>Price: $2</p>
                     <input type="number" id="quantity-banana" value="1" min="1">
                     <button onclick="addToCart('Banana', 3.00, 'quantity-banana')">Add to Cart</button>
                     
                 </div>
+            </td>
+        </tr>
+        </table>  
 </main>
     <footer>
         <p>&copy; 2024 Online Vegetable Store</p>
@@ -79,3 +96,4 @@
     <script src="shoppinglist.js"></script>
 </body>
 </html>
+

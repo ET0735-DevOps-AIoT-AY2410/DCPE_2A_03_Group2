@@ -9,7 +9,7 @@ header {
     background-color: #4CAF50;
     color: white;
     text-align: center;
-    padding: 1em;
+    padding: 2em;
 }
 
 main {
@@ -24,8 +24,8 @@ main {
     padding: 1em;
     text-align: center;
     text-align: center;
-    width: 500px; /* Set a fixed width */
-    height: 300px; /* Set a fixed height */
+    width: 290px; /* Set a fixed width */
+    height: 400px; /* Set a fixed height */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -58,7 +58,7 @@ main {
 footer {
     background-color: #f1f1f1;
     text-align: center;
-    padding: 1em;
+    padding: 0.1em;
     position: fixed;
     width: 100%;
     bottom: 0;
@@ -85,9 +85,7 @@ tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-tr:hover {
-    background-color: #3cd3e4;
-}
+
 
 #total-price {
     margin-top: 20px;

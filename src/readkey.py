@@ -37,7 +37,7 @@ def ATMPIN(card_no): #to allow key input for card payment
 
 if __name__ == "__main__":
     keypad.init(key_pressed)
-    keypad_thread = Thread.Thread( target=keypad.get_key )
+    keypad_thread = Thread( target=keypad.get_key )
     keypad_thread.start()
 
 

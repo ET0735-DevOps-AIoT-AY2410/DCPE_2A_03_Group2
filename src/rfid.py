@@ -1,4 +1,3 @@
-import RPI.GPIO as GPIO
 import signal
 import time
 import sys

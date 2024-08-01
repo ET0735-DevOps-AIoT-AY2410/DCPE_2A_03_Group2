@@ -46,7 +46,7 @@ def main():
 
                     
                     
-        if keyvalue == 2:
+        if key.ret_key() == 2:
             lcd.lcd_display_string("Powering Off",1)
             time.sleep(2)
             lcd.lcd_clear()

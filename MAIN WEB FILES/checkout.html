@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="shoppinglist.css">
+</head>
+<body>
+    <header>
+        <h1>Checkout</h1>
+        <a href="orderpage.html" class="nav-link">Back to Order Page</a>
+        <a href="cart.html" class="nav-link">Go to Cart</a>
+    </header>
+    <main>
+        <div class="checkout-options">
+            <button class="btn-pickup" onclick="selectPickup()">Self Pick Up</button>
+            <button class="btn-delivery" onclick="selectDelivery()">Delivery To Home</button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Online Vegetable Store</p>
+    </footer>
+    <script>
+        function selectPickup() {
+            alert('You selected Self Pick Up!');
+            // Implement the action for Self Pick Up here
+        }
+
+        function selectDelivery() {
+            alert('You selected Delivery!');
+            // Implement the action for Delivery here
+        }
+    </script>
+</body>
+</html>
+
+

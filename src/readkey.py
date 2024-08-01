@@ -34,6 +34,30 @@ def ATMPIN(card_no): #to allow key input for card payment
             return False
         else:
             return True
+ def ret_key_no_wait():
+    try:
+        keyvalue = share_keypad_queue.get_nowait()
+        
+    except queue.Empty:
+        return None
+    return keyvalue
+
+
+def clear_queue(): #clears the items in the queue
+    while not shared_keypad_queue.empty():
+        shared_keypad_queue.get()
+
+def get_item_by_position(position): #find the position of a item in the queue
+    items = []
+    item = None
+
+    for _ in range(position + 1):
+        item = shared_keypad_queue.get()
+        items.append(item)
+    for item in items:
+        shared_keypad_queue.put(item)
+    return items[position]
+
 
 if __name__ == "__main__":
     keypad.init(key_pressed)
@@ -62,17 +86,3 @@ if __name__ == "__main__":
 
 
 
-def clear_queue(): #clears the items in the queue
-    while not shared_keypad_queue.empty():
-        shared_keypad_queue.get()
-
-def get_item_by_position(position): #find the position of a item in the queue
-    items = []
-    item = None
-
-    for _ in range(position + 1):
-        item = shared_keypad_queue.get()
-        items.append(item)
-    for item in items:
-        shared_keypad_queue.put(item)
-    return items[position]

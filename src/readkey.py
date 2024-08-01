@@ -11,15 +11,34 @@ shared_keypad_queue = queue.Queue()
 def key_pressed(key):
     shared_keypad_queue.put(key)
 
-def key_reader():
+def key_reader(): #scans the keypad
     keypad.init(key_pressed)
     keypad_thread = Thread.Thread(target = keypad.get_key)
     keypad_thread.start()
 
-def ret_key():
+
+def ret_key(): #returns value
     keyvalue = shared_keypad_queue.get()
     return keyvalue
 
+def ATMPIN(card_no): #to allow key input for card payment
+    PIN = []
+    while (len(PIN)< len(int(i) for i in str(card_no))):
+        key = shared_keypad_queue.get() 
+        PIN.append(key)
+
+    if (len(PIN) == len(int(i) for i in str(card_no))):
+        if PIN.index("#")!=6 :
+            return False
+        if len(PIN)>7 :
+            return False
+        else:
+            return True
+
+if __name__ == "__main__":
+    keypad.init(key_pressed)
+    keypad_thread = Thread( target=keypad.get_key )
+    keypad_thread.start()
 
 
 
@@ -27,11 +46,27 @@ def ret_key():
 
 
 
-def clear_queue():
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def clear_queue(): #clears the items in the queue
     while not shared_keypad_queue.empty():
         shared_keypad_queue.get()
 
-def get_item_by_position(position):
+def get_item_by_position(position): #find the position of a item in the queue
     items = []
     item = None
 
@@ -41,6 +76,3 @@ def get_item_by_position(position):
     for item in items:
         shared_keypad_queue.put(item)
     return items[position]
-
-
-

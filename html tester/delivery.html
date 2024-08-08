@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery</title>
+    <link rel="stylesheet" href="shoppinglist.css">
+</head>
+<body>
+    <header>
+        <h1>Delivery</h1>
+        <a href="homepage.html" class="nav-link">Home page</a>
+        <a href="shoppingdirectory.html" class="nav-link">Directory</a>
+        <a href="shoppingcart.html" class="nav-link">Shopping Cart</a>
+        <a href="collection.html" class="nav-link">Collection</a>
+    </header>
+    <main>
+        <table id="order-summary-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Total Quantity</th>
+                    <th>Price per item</th>
+                    <th>Total Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Items will be dynamically added here -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Total Price</td>
+                    <td id="total-price">$0</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Delivery Fee</td>
+                    <td>$4</td>
+                </tr>
+                <tr>
+                    <td colspan="3"><strong>Grand Total</strong></td>
+                    <td id="grand-total">$0</td>
+                </tr>
+                    
+            </tfoot>
+            
+        </table>
+
+    <table>
+       
+    <td>
+    <div id="address-input" style="margin-top: 20px; text-align: center;">
+        <label for="address">Enter your address:</label><br>
+        <input type="text" id="address" name="address" placeholder="Enter your address" style="padding: 10px; width: 80%; margin-top: 10px;">
+        <br><br>
+        <button id="confirm-address" onclick="confirmAddress()">Confirm Address</button>
+    </div>
+    </td>
+    <td>
+    <div id="warning-box">
+        <p>Delivery fee of $4 when delivering to your doorstep<br></p>
+    </div>
+    </td>
+    </table>
+        <button id="pay-button" onclick="goToPayment()">Pay</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 Online Store</p>
+    </footer>
+    <style>
+        #warning-box {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid red;
+            background-color: #ffe6e6;
+            color: red;
+            text-align: center;
+        }
+
+        #confirm-address, #pay-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #confirm-address:hover, #pay-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Retrieve the cart from local storage
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const tableBody = document.querySelector('#order-summary-table tbody');
+            let totalPrice = 0;
+            const deliveryFee = 4.00;
+
+            cart.forEach(cartItem => {
+                const row = document.createElement('tr');
+
+                const itemName = document.createElement('td');
+                itemName.textContent = cartItem.item;
+                row.appendChild(itemName);
+
+                const itemQuantity = document.createElement('td');
+                itemQuantity.textContent = cartItem.quantity;
+                row.appendChild(itemQuantity);
+
+                const itemPrice = document.createElement('td');
+                itemPrice.textContent = `$${cartItem.price.toFixed(2)}`;
+                row.appendChild(itemPrice);
+
+                const itemTotal = document.createElement('td');
+                const total = cartItem.price * cartItem.quantity;
+                itemTotal.textContent = `$${total.toFixed(2)}`;
+                row.appendChild(itemTotal);
+
+                tableBody.appendChild(row);
+
+                totalPrice += total;
+            });
+
+            document.getElementById('total-price').textContent = `$${totalPrice.toFixed(2)}`;
+            const grandTotal = totalPrice + deliveryFee;
+            document.getElementById('grand-total').textContent = `$${grandTotal.toFixed(2)}`;
+        });
+
+        function confirmAddress() {
+            const address = document.getElementById('address').value;
+            if (address.trim() === "") {
+                alert("Please enter a valid address.");
+            } else {
+                alert("Address confirmed: " + address);
+            }
+        }
+
+        function goToPayment() {
+            window.location.href = 'paymentmade.html';
+        }
+    </script>
+</body>
+</html>

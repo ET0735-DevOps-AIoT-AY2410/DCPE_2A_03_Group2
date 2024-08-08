@@ -102,6 +102,17 @@ button {
     cursor: pointer;
 }
 
+.checkout-button {
+    background-color: rgb(21, 224, 214);
+    color: white;
+}
+
+
+.clear-cart-button {
+    background-color: red;
+    color: white;
+}
+
 .checkout-options {
     display: flex;
     justify-content: center;
@@ -117,8 +128,8 @@ button {
 }
 
 .btn-pickup, .btn-delivery {
-    width: 700px;
-    height: 700px;
+    width: 400px;
+    height: 400px;
     font-size: 1.5em;
     color: white;
     border-radius: 20px;
@@ -128,17 +139,13 @@ button {
     background-color: #4CAF50;
 }
 
-.btn-pickup:hover {
-    background-color: #45a049;
-}
+
 
 .btn-delivery {
     background-color: #2196F3;
 }
 
-.btn-delivery:hover {
-    background-color: #1e88e5;
-}
+
 
 .nav-link {
     margin-right: 30px; 
@@ -149,3 +156,31 @@ button {
 .nav-link:last-child {
     margin-right: 0; /* Remove the margin from the last link */
 }
+
+
+/* General button styles */
+
+
+button img {
+    width: 350px; /* Adjust size as needed */
+    height: 350px; /* Adjust size as needed */
+}
+
+button span {
+    text-align: center;
+}
+
+
+.btn-pickup {
+    background-color: rgb(227, 69, 101);
+    color: white;
+}
+
+.btn-delivery {
+    background-color: rgb(62, 124, 224);
+    color: white;
+}
+
+
+
+

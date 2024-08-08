@@ -1,4 +1,0 @@
-#if rfid.read_rfid(reader) == #enter UID of tag : 
-                        lcd.clear()
-                        lcd.lcd_display_string("Type Pin number",1)
-                        if key.ATMPIN(uid) == True:

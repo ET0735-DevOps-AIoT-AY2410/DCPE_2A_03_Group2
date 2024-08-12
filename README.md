@@ -70,17 +70,31 @@ Workload Distribution:
 
 Installation and Running Procedures:
     1. Clone git repository 
-    2. Raspberry Pi (version 3 or 4 recommended)
-    Raspberry Pi Camera Module
-    LCD Display (compatible with the Raspberry Pi)
-    Keypad (compatible with the Raspberry Pi)
-    RFID Reader Module (compatible with the Raspberry Pi)
-    Buzzer (compatible with the Raspberry Pi)
-    MicroSD card with Raspberry Pi OS installed
-    Power supply for Raspberry Pi
-    Ethernet cable or Wi-Fi adapter (for internet access if needed)
-    USB keyboard and mouse (optional for setup)
-    HDMI cable and monitor (optional for setup)
+    2. Hardware
+        Raspberry Pi (version 3 or 4 recommended)
+        Raspberry Pi Camera Module
+        LCD Display (compatible with the Raspberry Pi)
+        Keypad (compatible with the Raspberry Pi)
+        RFID Reader Module (compatible with the Raspberry Pi)
+        Buzzer (compatible with the Raspberry Pi)
+        MicroSD card with Raspberry Pi OS installed
+        Power supply for Raspberry Pi
+        Ethernet cable or Wi-Fi adapter (for internet access if needed)
+        USB keyboard and mouse (optional for setup)
+        HDMI cable and monitor (optional for setup)
+    3. Software
+        sudo apt-get update
+        sudo apt-get upgrade
+        sudo apt-get install python3-pip
+        sudo pip3 install RPi.GPIO
+        sudo pip3 install picamera[array]
+        sudo pip3 install Pillow
+        sudo pip3 install pyzbar
+        sudo pip3 install opencv-python
+        sudo pip3 install zbarlight
+        
+
+
     Explanation:
 
 Link to Video Demo:

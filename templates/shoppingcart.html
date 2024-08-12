@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='shoppinglist.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Your Shopping Cart</h1>
+        <a href="{{ url_for('homepage') }}">Home page</a>
+        <a href="{{ url_for('shoppingdirectory') }}">Directory</a>
+        
+    </header>   
+    <main>
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Total Quantity</th>
+                    <th>Price per item</th>
+                    <th>Total Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Items will be dynamically added here -->
+            </tbody>
+        </table>
+        <p id="total-price">Total Price: $0</p>
+        <button class="checkout-button" onclick="confirmCheckout()">Go To Checkout</button>
+        <button class="clear-cart-button" onclick="clearcart()">Clear Cart</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 Online Store</p>
+    </footer>
+    <script src="{{ url_for('static', filename='cart.js') }}"></script>
+    <script>
+        
+        const collection = "{{ url_for('collection') }}";
+        const shoppingcart = "{{ url_for('shoppingcart') }}";
+        
+        function confirmCheckout() {
+            if (confirm("Proceed to checkout?")) {
+                window.location.href = collection;
+            } else {
+                window.location.href = shoppingcart;
+            }
+        }
+    </script>
+
+</body>
+</html>

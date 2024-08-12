@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='shoppinglist.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Collection</h1>
+        <a href="{{ url_for('homepage') }}" >Home page</a>
+        <a href="{{ url_for('shoppingdirectory') }}" >Directory</a>
+        <a href="{{ url_for('shoppingcart') }}" >Shopping Cart</a>
+        
+    </header>
+    <main>
+        
+        <div class="checkout-options">
+            <button class="btn-pickup" onclick="selectPickup()">
+                <img src="{{ url_for('static', filename='fruitpic/self-pick-up.png') }}" alt="Self Pick Up" >
+                <span>Self Pick Up</span>
+            </button>
+            <button class="btn-delivery" onclick="selectDelivery()">
+                <img src="{{ url_for('static', filename='fruitpic/delivery.png') }}" alt="Delivery">
+                <span>Delivery To Home</span>
+            </button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Online Store</p>
+    </footer>
+    <script>
+        function selectPickup() {
+           
+            const items = ''; 
+            const total = ''; 
+            window.location.href = "{{ url_for('selfpickup') }}?items=" + encodeURIComponent(items) + "&total=" + encodeURIComponent(total);
+        
+        }
+    
+        function selectDelivery() {
+            
+            const items = ''; 
+            const total = ''; 
+            window.location.href = "{{ url_for('delivery') }}?items=" + encodeURIComponent(items) + "&total=" + encodeURIComponent(total);
+        }
+    </script>
+    
+</body>
+</html>
+
+

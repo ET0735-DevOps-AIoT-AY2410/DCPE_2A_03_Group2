@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Finished</title>
+    <link rel="stylesheet" href="shoppinglist.css">
+</head>
+<body>
+    <header>
+        <h1>Payment successful!</h1>
+    </header>
+    <main style="text-align: center;">
+        <p>Payment successful, items will be delivered to your address.</p>
+        <button id="back-to-order-page" onclick="goToOrderPage()">Back to Home Page</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 Online Store</p>
+    </footer>
+    <style>
+        #back-to-order-page {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #back-to-order-page:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function goToOrderPage() {
+            window.location.href = 'homepage.html';
+        }
+    </script>
+</body>
+</html>

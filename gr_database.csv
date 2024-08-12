@@ -1,8 +1,8 @@
-name,price
-carrot,2
-tomato,1
-pumpkin,3
-eggplant,2
-apple,1
-orange,1
-banana,2
+name,product_ID,price
+carrot,1234567890,2
+tomato,1234567891,1
+pumpkin,1234567892,3
+eggplant,1234567893,2
+apple,1234567894,1
+orange,1234567895,1
+banana,1234567896,2

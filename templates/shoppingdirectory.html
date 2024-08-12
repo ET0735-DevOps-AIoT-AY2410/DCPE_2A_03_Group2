@@ -1,0 +1,103 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ONLINE STORE</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='shoppinglist.css') }}">
+    </head>
+
+    <body>
+        <header>
+            <h1>Directory</h1>
+            <a href="{{ url_for('homepage') }}">Home page</a>
+            <a href="{{ url_for('shoppingcart') }}">Shopping Cart</a>
+            <a href="{{ url_for('collection') }}" >Collection</a>
+            
+        
+            
+        </header>
+        <main>
+            <table>
+            <tr>
+                <td>   <div class="product" id="carrot">
+                        <h2>Carrot</h2>
+                        <img src="{{ url_for('static', filename='fruitpic/carrot-icon.png') }}" alt="Carrot" class="product-image">
+                        <p>Price: $1</p>
+                        <input type="number" id="quantity-carrot" value="1" min="1">
+                        <button onclick="addToCart('Carrot', 1, 'quantity-carrot')">Add to Cart</button>
+                        
+                    </div>
+                </td>
+                <td>
+                    <div class="product" id="tomato">
+                        <h2>Tomato</h2>
+                        <img src="{{ url_for('static', filename='fruitpic/tomato-icon.png') }}" alt="Tomato" class="product-image">
+                        <p>Price: $1</p>
+                        <input type="number" id="quantity-tomato" value="1" min="1">
+                        <button onclick="addToCart('Tomato', 1, 'quantity-tomato')">Add to Cart</button>
+                    
+                    </div>
+                </td>
+                <td>
+                    <div class="product" id="pumpkin">
+                        <h2>Pumpkin</h2>
+                        <img src="{{ url_for('static', filename='fruitpic/pumpkin-icon.png') }}" alt="Pumpkin" class="product-image">
+                        <p>Price: $3</p>
+                        <input type="number" id="quantity-pumpkin" value="1" min="1">
+                        <button onclick="addToCart('Pumpkin', 3, 'quantity-pumpkin')">Add to Cart</button>
+                        
+                    </div>           
+                </td>
+                <td>
+                    <div class="product" id="eggplant">
+                        <h2>Eggplant</h2>
+                        <img src="{{ url_for('static', filename='fruitpic/eggplant-icon.png') }}" alt="eggplant" class="product-image">
+                        <p>Price: $2</p>
+                        <input type="number" id="quantity-eggplant" value="1" min="1">
+                        <button onclick="addToCart('Eggplant', 2, 'quantity-eggplant')">Add to Cart</button>
+                        
+                    </div>
+                
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="product" id="Fresh Apple">
+                        <h2>Fresh Apple</h2>
+                        <img src="{{ url_for('static', filename='fruitpic/apple-icon.png') }}" alt="fresh-apple" class="product-image">
+                        <p>Price: $1</p>
+                        <input type="number" id="quantity-fresh-apple" value="1" min="1">
+                        <button onclick="addToCart('Fresh-Apple', 1, 'quantity-fresh-apple')">Add to Cart</button>
+                        
+                    </div>
+                </td>
+                <td>
+                    <div class="product" id="orange">
+                        <h2>Orange</h2>
+                        <img src="{{ url_for('static', filename='fruitpic/orange-icon.png') }}" alt="orange" class="product-image">
+                        <p>Price: $1</p>
+                        <input type="number" id="quantity-orange" value="1" min="1">
+                        <button onclick="addToCart('Orange', 1, 'quantity-orange')">Add to Cart</button>
+                    </div>
+                </td>
+                <td>
+                    <div class="product" id="banana">
+                        <h2>Banana</h2>
+                        <img src="{{ url_for('static', filename='fruitpic/bananas-icon.png') }}" alt="orange" class="product-image">
+                        <p>Price: $2</p>
+                        <input type="number" id="quantity-banana" value="1" min="1">
+                        <button onclick="addToCart('Banana', 2, 'quantity-banana')">Add to Cart</button>
+                        
+                    </div>
+                </td>
+            </tr>
+            </table>  
+    </main>
+        <footer>
+            <p>&copy; 2024 Online Store</p>
+        </footer>
+        <script src="{{ url_for('static', filename='shoppinglist.js') }}"></script>
+    </body>
+    </html>
+

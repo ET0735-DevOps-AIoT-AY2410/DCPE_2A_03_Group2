@@ -109,15 +109,11 @@ def main():
         lcd.lcd_display_string("2. Power Off",2)
 
         if key.ret_key() == 1:
-            print (time.time())
             last_activity_time = time.time()
-            total_price = 0.0
+            total_price = 0.
             lcd.lcd_clear()
             lcd.lcd_display_string("1, Scan Ready",1)
             lcd.lcd_display_string("3. Pay",2)
-            if time.time() - last_activity_time > 60:
-                print("Returning to home screen due to inactivity")
-                home()
             
             if key.ret_key() == 1:
                 scan()
@@ -126,12 +122,7 @@ def main():
                 lcd.lcd_clear()
                 lcd.lcd_display_string("1 - PAYWAVE",1)
                 lcd.lcd_display_string("2 - ATMPIN",2)
-                last_activity_time = time.time()
-                
-                if (time.time() - last_activity_time) > 60:
-                    print("Returning to home screen due to inactivity")
-                    home()
-
+               
                 if key.ret_key() == 1:
                     last_activity_time = time.time()
                     lcd.lcd_clear()
@@ -162,13 +153,6 @@ def main():
                     else:
                         print("Incorrect PIN")
                         break
-                    if time.time() - last_activity_time > 60:
-                        print("Returning to home screen due to inactivity")
-                        home()
-                if time.time() - last_activity_time > 60:
-                    print("Returning to home screen due to inactivity")
-                    home()
-                    last_activity_time = time.time()
                     
         if key.ret_key() == 2:
             lcd.lcd_clear()

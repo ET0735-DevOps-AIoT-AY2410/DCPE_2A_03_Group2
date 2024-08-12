@@ -63,12 +63,24 @@ Software requirements
             - When delivery is chosen, the system will inform that there is a delivery charge of $4 
             - No charge if customer chose self-pick up
 Workload Distribution:
-    Xavier (P2302874):
-    WoonYeung (P2319485):
-    Frinze (P2319795):
-    Zhengjie (P2319430):
+    Xavier (P2302874): REQ 1, REQ 2, REQ 5, REQ 6, REQ 7, REQ 11, REQ 12
+    WoonYeung (P2319485): REQ 3, REQ 4, REQ 7, REQ 10, REQ 11
+    Frinze (P2319795):  REQ 8, REQ 9
+    Zhengjie (P2319430): REQ 8, REQ9
 
 Installation and Running Procedures:
+    1. Clone git repository 
+    2. Raspberry Pi (version 3 or 4 recommended)
+    Raspberry Pi Camera Module
+    LCD Display (compatible with the Raspberry Pi)
+    Keypad (compatible with the Raspberry Pi)
+    RFID Reader Module (compatible with the Raspberry Pi)
+    Buzzer (compatible with the Raspberry Pi)
+    MicroSD card with Raspberry Pi OS installed
+    Power supply for Raspberry Pi
+    Ethernet cable or Wi-Fi adapter (for internet access if needed)
+    USB keyboard and mouse (optional for setup)
+    HDMI cable and monitor (optional for setup)
     Explanation:
 
 Link to Video Demo:

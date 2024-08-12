@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="shoppinglist.css">
+</head>
+<body>
+    <header>
+        <h1>Collection</h1>
+        <a href="homepage.html" class="nav-link">Home page</a>
+        <a href="shoppingdirectory.html" class="nav-link">Directory</a>
+        <a href="shoppingcart.html" class="nav-link">Shopping Cart</a>
+        
+    </header>
+    <main>
+        
+        <div class="checkout-options">
+            <button class="btn-pickup" onclick="selectPickup()">
+                <img src="fruitpic/self-pick-up.png" alt="Self Pick Up" >
+                <span>Self Pick Up</span>
+            </button>
+            <button class="btn-delivery" onclick="selectDelivery()">
+                <img src="fruitpic/delivery.png" alt="Delivery">
+                <span>Delivery To Home</span>
+            </button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Online Store</p>
+    </footer>
+    <script>
+        function selectPickup() {
+           
+            const items = ''; 
+            const total = ''; 
+            window.location.href = `selfpickup.html?items=${encodeURIComponent(items)}&total=${encodeURIComponent(total)}`;
+        }
+    
+        function selectDelivery() {
+            
+            const items = ''; 
+            const total = ''; 
+            window.location.href = `delivery.html?items=${encodeURIComponent(items)}&total=${encodeURIComponent(total)}`;
+        }
+    </script>
+    
+</body>
+</html>
+
+

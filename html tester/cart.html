@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="shoppinglist.css">
+</head>
+<body>
+    <header>
+        <h1>Your Shopping Cart</h1>
+        <a href="orderpage.html" class="nav-link">Back to Order Page</a>
+        <a href="checkout.html" class="nav-link">Checkout</a>
+    </header>   
+    <main>
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Items will be dynamically added here -->
+            </tbody>
+        </table>
+        <p id="total-price">Total Price: $0</p>
+        <button onclick="confirmCheckout()"> Go To Checkout</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 Online Vegetable Store</p>
+    </footer>
+    <script src="cart.js"></script>
+    <script>
+        function confirmCheckout() {
+            if (confirm("Proceed to checkout?")) {
+                window.location.href = 'checkout.html';
+            } else {
+                window.location.href = 'cart.html';
+            }
+        }
+    </script>
+
+</body>
+</html>

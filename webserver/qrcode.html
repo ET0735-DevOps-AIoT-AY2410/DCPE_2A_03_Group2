@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code for Pickup</title>
+    <link rel="stylesheet" href="shoppinglist.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <style>
+        #qr-code-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh; /* Adjust height as needed */
+        }
+        #qr-instruction {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>QR Code for Pickup</h1>
+        <a href="homepage.html" class="nav-link">Home page</a>
+        <a href="shoppingdirectory.html" class="nav-link">Directory</a>
+        <a href="shoppingcart.html" class="nav-link">Shopping Cart</a>
+        <a href="collection.html" class="nav-link">Collection</a>
+    </header>
+    <main>
+        <div id="qr-code-container">
+            <canvas id="qr-code"></canvas>
+            <p id="qr-instruction">Please take a screenshot and present this QR code when picking up items in store</p>
+            
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Online Store</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Retrieve the cart from local storage
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let totalPrice = 0;
+            let orderSummary = '';
+
+            cart.forEach(cartItem => {
+                const total = cartItem.price * cartItem.quantity;
+                totalPrice += total;
+                orderSummary += `${cartItem.item} x ${cartItem.quantity}  $${cartItem.price.toFixed(2)} each = $${total.toFixed(2)}\n`;
+            });
+
+            orderSummary += `Total Price: $${totalPrice.toFixed(2)}`;
+
+            // Generate the QR code
+            new QRious({
+                element: document.getElementById('qr-code'),
+                size: 250,
+                value: orderSummary
+            });
+        });
+    </script>
+</body>
+</html>

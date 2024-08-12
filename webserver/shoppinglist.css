@@ -1,0 +1,186 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 2em;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    padding: 2em;
+    gap:20px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 1em;
+    text-align: center;
+    text-align: center;
+    width: 290px; /* Set a fixed width */
+    height: 400px; /* Set a fixed height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.product-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+}
+
+.product-controls input[type="number"] {
+    width: 50%;
+}
+
+.product-controls button {
+    width: 45%;
+}
+
+
+footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 0.1em;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+    padding: 12px; /* Increase the padding to increase spacing */
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
+
+#total-price {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+button {
+    margin-top: 20px;
+    padding: 20px 20px;
+    background-color: #906cf3;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.checkout-button {
+    background-color: rgb(21, 224, 214);
+    color: white;
+}
+
+
+.clear-cart-button {
+    background-color: red;
+    color: white;
+}
+
+.checkout-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    gap: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-pickup, .btn-delivery {
+    width: 400px;
+    height: 400px;
+    font-size: 1.5em;
+    color: white;
+    border-radius: 20px;
+}
+
+.btn-pickup {
+    background-color: #4CAF50;
+}
+
+
+
+.btn-delivery {
+    background-color: #2196F3;
+}
+
+
+
+.nav-link {
+    margin-right: 30px; 
+    text-decoration: none;
+    color: #000; 
+}
+
+.nav-link:last-child {
+    margin-right: 0; /* Remove the margin from the last link */
+}
+
+
+/* General button styles */
+
+
+button img {
+    width: 350px; /* Adjust size as needed */
+    height: 350px; /* Adjust size as needed */
+}
+
+button span {
+    text-align: center;
+}
+
+
+.btn-pickup {
+    background-color: rgb(227, 69, 101);
+    color: white;
+}
+
+.btn-delivery {
+    background-color: rgb(62, 124, 224);
+    color: white;
+}
+
+
+
+

@@ -45,13 +45,7 @@ def payment():
     if key.ret_key() == 1:
         wakeup_event.set() #wake system up if sleeping
         scan()
-def home():
-    lcd.lcd_clear()
-    lcd.lcd_display_string("1. Scanner Start",1)
-    lcd.lcd_display_string("2. Power off",2)
-    if key.ret_key() == 1:
-        wakeup_event.set()
-        main()
+
 
 def scan():
     global total_price
@@ -129,7 +123,7 @@ def main():
             total_price = 0.0 #reset for new customer
             last_activity_time.value = time.time()
             lcd.lcd_clear()
-            lcd.lcd_display_string("1, Scan Ready",1)
+            lcd.lcd_display_string("1. Scan Ready",1)
             lcd.lcd_display_string("3. Pay",2)
             
             if key.ret_key() == 1:
@@ -156,7 +150,7 @@ def main():
                         lcd.lcd_display_string("Payment Success",2)
                         time.sleep(2)
                         lcd.lcd_clear()
-                        home()
+                        main()
                 #input atm card code
                 if key.ret_key() == 2:
                     last_activity_time.value = time.time()
@@ -164,8 +158,8 @@ def main():
                     lcd.lcd_clear()
                     isvalid = True
                     while(isvalid == True):
-                        lcd.lcd_display_string("Please Key in PIN",1)
-                        lcd.lcd_display_string("press # when done",2)
+                        lcd.lcd_display_string("Key in PIN",1)
+                        lcd.lcd_display_string("Press # to enter",2)
                         time.sleep(2)
                         lcd.lcd_clear()
                         
@@ -177,9 +171,10 @@ def main():
                             time.sleep(2)
                             lcd.lcd_clear()
                             isvalid = False
-                            home()
+                            main()
                         else:
                             print("Incorrect PIN")
+                            buzz.beep(1,1,2)
                             lcd.lcd_display_string("Incorrect.",1)
                             lcd.lcd_display_string("Try again.",2)
                             isvalid = True

@@ -1,3 +1,7 @@
+
+![Supermarket](https://github.com/user-attachments/assets/bc6fe1ed-0d5b-4361-94de-e8b336aaa3fb)
+
+
 SUPERMARKET SELF_CHECKOUT WITH PAYMENT FUNCTION AND WEB-APP
 Description:
 

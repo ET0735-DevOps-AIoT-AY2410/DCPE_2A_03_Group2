@@ -106,4 +106,6 @@ Installation and Running Procedures:
     sudo pip3 install pyzbar
     sudo pip3 install opencv-python
     sudo pip3 install zbarlight
+
+
 Link to Video Demo:

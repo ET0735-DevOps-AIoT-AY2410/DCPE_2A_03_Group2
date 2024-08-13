@@ -23,10 +23,10 @@
 <body>
     <header>
         <h1>QR Code for Pickup</h1>
-        <a href="homepage.html" class="nav-link">Home page</a>
-        <a href="shoppingdirectory.html" class="nav-link">Directory</a>
-        <a href="shoppingcart.html" class="nav-link">Shopping Cart</a>
-        <a href="collection.html" class="nav-link">Collection</a>
+        <a href="{{ url_for('homepage') }}" class="nav-link">Home page</a>
+        <a href="{{ url_for('shoppingdirectory') }}" class="nav-link">Directory</a>
+        <a href="{{ url_for('shoppingcart') }}" class="nav-link">Shopping Cart</a>
+        <a href="{{ url_for('collection') }}" class="nav-link">Collection</a>
     </header>
     <main>
         <div id="qr-code-container">

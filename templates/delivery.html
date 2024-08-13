@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delivery</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='shoppinglist.cs') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='shoppinglist.css') }}">
 </head>
 <body>
     <header>
@@ -139,7 +139,7 @@
         }
 
         function goToPayment() {
-            window.location.href = 'paymentmade.html';
+            window.location.href = "{{ url_for('paymentmade') }}";
         }
     </script>
 </body>

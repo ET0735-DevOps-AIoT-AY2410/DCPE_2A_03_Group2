@@ -1,43 +1,20 @@
-# syntax=docker/dockerfile:1
+# Use the official Python image from the Docker Hub
+FROM python:3.12.3-slim
 
-# Set the Python version through an ARG
-ARG PYTHON_VERSION=3.9
-
-# Use the specified Python version as the base image
-FROM python:${PYTHON_VERSION}-slim as base
-
-# Prevent Python from writing pyc files
-ENV PYTHONDONTWRITEBYTECODE=1
-
-# Prevent Python from buffering stdout and stderr
-ENV PYTHONUNBUFFERED=1
-
-# Set the working directory
+# Set the working directory in the container
 WORKDIR /app
 
-# Create a non-privileged user that the app will run under
-ARG UID=10001
-RUN adduser \
-    --disabled-password \
-    --gecos "" \
-    --home "/nonexistent" \
-    --shell "/sbin/nologin" \
-    --no-create-home \
-    --uid "${UID}" \
-    appuser
-
-# Install dependencies
-COPY requirements.txt /app/requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Switch to the non-privileged user
-USER appuser
-
-# Copy the source code into the container
+# Copy the current directory contents into the container at /app
 COPY . /app
 
-# Expose the port that the application listens on
-EXPOSE 8000
+# Install any necessary dependencies specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Run the application
-CMD ["python", "main.py"]
+# Make port 5000 available to the world outside this container
+EXPOSE 5000
+
+# Define environment variable to ensure that Python output is displayed in real-time
+ENV PYTHONUNBUFFERED=1
+
+# Run app.py when the container launches
+CMD ["python", "app.py"]

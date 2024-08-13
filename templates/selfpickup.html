@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self Checkout</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='shoppinglist.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Self Pickup</h1>
+        <a href="{{ url_for('homepage') }}" class="nav-link">Home page</a>
+        <a href="{{ url_for('shoppingdirectory') }}" class="nav-link">Directory</a>
+        <a href="{{ url_for('shoppingcart') }}" class="nav-link">Shopping Cart</a>
+        <a href="{{ url_for('collection') }}" class="nav-link">Collection</a>
+        <a href="{{ url_for('qrcode') }}" class="nav-link">Qr-Code</a>
+    </header>
+    <main>
+       
+        <table id="order-summary-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Total Quantity</th>
+                    <th>Price per item</th>
+                    <th>Total Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Items will be dynamically added here -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Total Price</td>
+                    <td id="total-price">$0</td>
+                </tr>
+            </tfoot>
+        </table>
+    </main>
+
+    <footer>
+        <button onclick="redirectToQRCode()">Pay</button>
+        <p>&copy; 2024 Online Store</p>
+    </footer>
+    <script>
+       function redirectToQRCode() {
+            // Redirect to the qrcode.html page
+            window.location.href = "{{ url_for('qrcode') }}";
+        }
+       
+       document.addEventListener('DOMContentLoaded', () => {
+            
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const tableBody = document.querySelector('#order-summary-table tbody');
+            let totalPrice = 0;
+
+            cart.forEach(cartItem => {
+                const row = document.createElement('tr');
+
+                const itemName = document.createElement('td');
+                itemName.textContent = cartItem.item;
+                row.appendChild(itemName);
+
+                const itemQuantity = document.createElement('td');
+                itemQuantity.textContent = cartItem.quantity;
+                row.appendChild(itemQuantity);
+
+                const itemPrice = document.createElement('td');
+                itemPrice.textContent = `$${cartItem.price.toFixed(2)}`;
+                row.appendChild(itemPrice);
+
+                const itemTotal = document.createElement('td');
+                const total = cartItem.price * cartItem.quantity;
+                itemTotal.textContent = `$${total.toFixed(2)}`;
+                row.appendChild(itemTotal);
+
+                tableBody.appendChild(row);
+
+                totalPrice += total;
+            });
+
+            document.getElementById('total-price').textContent = `$${totalPrice.toFixed(2)}`;
+        });
+    </script>
+</body>
+</html>

@@ -5,16 +5,27 @@ SUPERMARKET SELF_CHECKOUT WITH PAYMENT FUNCTION AND WEB-APP
 Description:
 
 Online Purchases
+
 In addition to purchasing the items in the store, customers also have the option to purchase the items online via a Smartphone App or website.
+
 For items purchased online, the customer then has the option to pick up the items from the supermarket themselves or deliver directly to their homes with a delivery fee of $4.00
+
 Online customers that opt to collect their items from the supermarket will receive a QR code after online payment that they will need to show to the supermarket staff to collect their items
+
 In-Store Purchases
+
 The system is based on a camera that is used to read the bar codes on the products
+
 Each product has a barcode which contains a 10 digit unique identifier
+
 In a central database, the product IDs are mapped to the price of the product as well as several other attributes related to the product
+
 Each time a product’s barcode is scanned, the LCD screen shall display the product name as well as the price and the current cumulative total on the last line of the LCD
+
 The system supports the following payment modes
+
 ATM via pin code on the numeric keypad
+
 “PayWave” via the RFID card reader
 
 Hardware requirements

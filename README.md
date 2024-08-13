@@ -69,15 +69,16 @@ Authentication Service
 13. Choosing of items through the website when finished, can choose from self-pick up or delivery.
 When delivery is chosen, the system will inform that there is a delivery charge of $4
 No charge if customer chose self-pick up
+
 Workload Distribution:
 
-Xavier (P2302874): REQ 1, REQ 2, REQ 5, REQ 6, REQ 7, REQ 8, REQ 9, REQ-10, REQ-11, REQ-14, REQ-15
+Xavier (P2302874): REQ 1, REQ 2, REQ 5, REQ 6, REQ 7, REQ 8, REQ 9, REQ-10, REQ-11, REQ-14, REQ-15, readme file, SRS Document, Sprint_planning, Dockerising, Systems_testing Document
 
-WoonYeung (P2319485): REQ 3, REQ 4, REQ-8, REQ 10, REQ-15, REQ-16
+WoonYeung (P2319485): REQ 3, REQ 4, REQ-8, REQ 10, REQ-15, REQ-16, Pytest, readme file, SRS Document, Dockerising, Systems_testing Document
 
-Frinze (P2319795): REQ 12, REQ 13
+Frinze (P2319795): REQ 12, REQ 13, Sprint_planning, Dockerising, SRS Document
 
-Zhengjie (P2319430): REQ 12, REQ 13
+Zhengjie (P2319430): REQ 12, REQ 13, Dockerising, Sprint_planning, Systems_testing Document
 
 Installation and Running Procedures:
 

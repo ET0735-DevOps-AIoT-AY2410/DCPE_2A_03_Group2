@@ -21,37 +21,40 @@ def initialize_picam():
     return picam2
 
 
-def capture_image(picam2):
+def capture_image(picam2, file_path="barcode.jpg"):
     time.sleep(1)
-    picam2.capture_file("barcode.jpg")
-    return
+    picam2.capture_file(file_path)
+    return file_path
 
 
-def decode_barcode(file):
-    image = Image.open(file)
-    scanned_barcode = decode(image)
-    barcode_data = 0 
-    
-    if (len(scanned_barcode) == 0):
-        print ("no barcodes detected")
-        scanned_barcode = 0
-        return 0
-        print(scanned_barcode)
-    
-    if (len(scanned_barcode) != 0):
+def decode_barcode(file_path):
+    try:
+        image = Image.open(file_path)
+        scanned_barcode = decode(image)
+        
+        if not scanned_barcode:
+            print("No barcodes detected")
+            return None
+        
         for barcode in scanned_barcode:
             barcode_data = barcode.data.decode()
-            print("barcode information:", barcode_data)
+            print("Barcode information:", barcode_data)
             return barcode_data
-    return
+
+    except Exception as e:
+        print(f"Error decoding barcode: {e}")
+        return None
 
 def close_picam():
     picam2 = Picamera2()
     picam2.close()
 
 if __name__ == "_main_":
-    fn = os.path.basename("barcode.jpg")
-    initialize_picam()
     picam2 = initialize_picam()
-    capture_image(picam2)
-    decode_barcode(fn)
+    file_path = capture_image(picam2)
+    barcode_data = decode_barcode(file_path)
+    close_picam(picam2)
+    if barcode_data:
+        print(f"Decoded barcode: {barcode_data}")
+    else:
+        print("No barcode data found.")

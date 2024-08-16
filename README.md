@@ -109,4 +109,4 @@ Installation and Running Procedures:
     sudo pip3 install zbarlight
 
 
-Link to Video Demo:
+Link to Video Demo:https://drive.google.com/drive/folders/18aRc_YcFvcUbjQkma-mSpIwwzqC218V6?usp=drive_link
